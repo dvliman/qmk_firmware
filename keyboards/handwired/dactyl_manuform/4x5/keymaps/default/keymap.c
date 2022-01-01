@@ -35,9 +35,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *                      | SHIFT| CTRL |                             | ALT  |SHIFT |
      *                      '------+------'                             '------+------'
      *                                    '------+------' '------+------'
-     *                                    | TAB  | HOME | | END  | DEL  |
+     *                                    | TAB  | Lower | | END  | DEL  |
      *                                    '------+------' '------+------'
-     *                                    | Raise|  ~   | | GUI  | Lower|
+     *                                    | Raise |  ~   | | GUI  | Lower|
      *                                    '------+------' '------+------'
      */
     [_BASE] = LAYOUT(
@@ -46,19 +46,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                                         KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_QUOT,
                           KC_LBRC, KC_RBRC,                                                        KC_MINS, KC_EQL,
                                                      SFT_ESC, CTL_BSPC, ALT_SPC, SFT_ENT,
-                                                     KC_TAB,  KC_HOME,  KC_END,  KC_DEL,
-                                                     RAISE,   KC_GRV,   KC_LGUI, LOWER
+                                                     LOWER,  KC_TAB,  KC_END,  KC_DEL,
+                                                     KC_GRV, RAISE,   KC_LGUI, LOWER
     ),
 
     /* Raise
      * ,----------------------------------,                             ,----------------------------------,
-     * |      |      |  mup |      |      |                             | VOL+ |      |  up  |      | PgUp |
+     * | VOL+ |      |  up  |      | PgUp |                           | VOL+ |      |  up  |      | PgUp |
      * |------+------+------+------+------|                             |-------------+------+------+------|
-     * |      | mleft| mdown|mright|      |                             | MUTE | left | down |right | PgDn |
+     * | MUTE | left | down |right | PgDn |                            | MUTE | left | down |right | PgDn |
      * |------+------+------+------+------|                             |------|------+------+------+------|
-     * |      |      |      |      |      |                             | VOL- |  /   |  \   |  ?   |  |   |
+     * | VOL- |  /   |  \   |  ?   |  |   |                             | VOL- |  /   |  \   |  ?   |  |   |
      * |------+------+------+-------------,                             ,-------------+------+------+------,
-     *        |      |      |                                                         | mbtn |mbtn2 |
+     *        | mbtn |mbtn2 |                                                         | mbtn |mbtn2 |
      *        '------+------'-------------'                             '-------------'------+------'
      *                      |      |      |                             |      |      |
      *                      |      |      |                             |      |      |
@@ -71,10 +71,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *                                    '------+------' '------+------'
      */
     [_RAISE] = LAYOUT(
-        _______, _______, KC_MU,   _______, _______,                                      KC_VOLU, _______, KC_UP,   _______, KC_PGUP,
-        _______, KC_ML,   KC_MD,   KC_MR,   _______,                                      KC_MUTE, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,
-        _______, _______, _______, _______, _______,                                      KC_VOLD, KC_SLSH, KC_BSLS, KC_QUES, KC_PIPE,
-                 _______, _______,                                                                          KC_MB1,  KC_MB2,
+        KC_VOLU, _______, KC_UP,   _______, KC_PGUP,                                      KC_VOLU, _______, KC_UP,   _______, KC_PGUP,
+        KC_MUTE, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,                                     KC_MUTE, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,
+        KC_VOLD, KC_SLSH, KC_BSLS, KC_QUES, KC_PIPE,                                      KC_VOLD, KC_SLSH, KC_BSLS, KC_QUES, KC_PIPE,
+                 KC_MB1,  KC_MB2,                                                                          KC_MB1,  KC_MB2,
                                    _______, _______,                                      _______, _______,
                                                      _______, _______,  _______, _______,
                                                      _______, _______,  _______, _______
